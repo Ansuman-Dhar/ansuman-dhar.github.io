@@ -1,0 +1,176 @@
+@font-face {
+    font-family: 'Hack';
+    src: url('./fonts/hack-regular.woff') format('woff'),
+         url('./fonts/hack-regular.woff2') format('woff2'),
+         url('./fonts/hack-regular.ttf') format('truetype');
+}
+
+:root{
+    --default-color: #20C20E;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+html{
+    background: black;
+    overflow-x: hidden;
+}
+
+a{
+    color: var(--default-color);
+}
+
+.text{
+    font-family: 'Hack';
+    font-size: larger;
+    color: var(--default-color);
+}
+
+#welcomePage{
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    text-align: center;
+}
+
+.skip{
+    position: absolute;
+    top: 10%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.skip button{
+    margin: 0 auto;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    background-color: black;
+    border: 1px solid var(--default-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 200ms;    
+}
+
+.skip button:hover{
+    transform: scale(1.1);
+    color: #000;
+    background-color: var(--default-color);
+}
+
+.welcomeImages{
+    position: absolute;
+    top: 35%;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.img-ansu{
+    width: 160px;
+    height: 160px;
+    animation: img-rotate 15s infinite linear;
+}
+
+.rot-rev{
+    animation: img-rotate 15s infinite linear reverse;
+}
+
+.img-ansu-main{
+    width: 200px;
+    height: 200px;
+    animation: floating 3s infinite ease-in-out;
+}
+
+.img-ansu:hover, .rot-rev:hover{
+    animation-play-state: paused;
+}
+
+.button{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button button{
+    margin: 0 auto;
+    padding: 10px;
+    background-color: black;
+    border: 1px solid var(--default-color);
+    border-radius: 10px;
+    cursor: pointer;
+    height: 10vh;
+    width: 40vw;
+    transition: transform 200ms;    
+}
+
+.button button:hover{
+    transform: scale(1.1);
+    color: #000;
+    background-color: var(--default-color);
+}
+
+.disclaimer{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: x-small;
+}
+
+#center{
+    position: absolute;
+    display: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: xx-large;
+    transition: opacity 2s cubic-bezier(.55,.06,.68,.19) 0s;
+}
+
+#console{
+    display: none;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.consoleObj{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@keyframes img-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }    
+}
